@@ -1,7 +1,7 @@
 # The-Hidden-Path
 Website developed using PHP with MySQL as part of my M.Eng course: Web Systems and Web Computing. Users can search for hiking trails based on geolocation. Logged in users can submit hiking trails and reviews.
 
-Highlights:
+## Highlights:
 1) The website was hosted on AWS EC2 and used AWS S3 bucket for storage of user submitted files.
 2) All website components were served over HTTPS (SSL/TLS). Any HTTP request is redirected by the apache server to HTTPS.
 3) User passwords are salted and hashed in the database.

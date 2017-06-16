@@ -1,0 +1,406 @@
+/* Web Systems and Web Computing Project: Part 2
+   Filename: style_main.css
+   Description: styling sheet for all html files
+
+   For course: CAS 6WW3
+   By: Omer Waseem (graduate student)
+
+   References:
+
+   1) Responsive top navigation design is based on w3school examples:
+   http://www.w3schools.com/css/tryit.asp?filename=trycss_navbar_horizontal_responsive
+*/
+
+/* the top most css applies generally to most pages, with specific formatting futher below */
+html {
+   font-family: Arial, Helvetica, sans-serif; /* browser safe font */
+}
+
+/* centered design for body elements */
+body {
+   box-sizing: border-box;
+   margin-right: 30px;
+   margin-left: 30px;
+   background-color: #F2F3F4;
+   color: #566573;
+}
+
+/* header with background image for larger screens, for smaller screens see @media query below */
+header {
+   background-image: url('../images/headerbg_lg.jpg');
+   background-color: #6C8C71;
+   display: block;
+   color: whitesmoke;
+   margin-top: 45px;
+   padding: 40px 40px 40px 40px;
+}
+
+a {
+   text-decoration: none;
+   color: #566573;
+}
+
+/* CSS for responsive nav menu */
+/* fixed navigation menu at the top */
+nav {
+   position: fixed;
+   top: 0px;
+   left: 0px;
+   width: 100%;
+   z-index: 999;
+}
+ul.topnav { /* list for navigation links */
+   list-style-type: none;
+   margin: 0;
+   padding: 0;
+   overflow: hidden;
+   background-color: #4B9656;
+   font-weight: bold;
+}
+ul.topnav li { /* horizontal formatting for navigation elements on larger screens */
+   float: left;
+}
+ul.topnav li a { /* navigation links formatting */
+   display: block;
+   text-align: center;
+}
+ul.topnav li a.links {
+   padding: 16px 20px;
+   color: whitesmoke;
+}
+ul.topnav li a:hover:not(.active) {
+   background-color: #72BF7D;
+}
+ul.topnav li a.active { /* active element represents current page being viewed */
+   color: #1E5726;
+}
+ul.topnav li.login { /* login button shifted to the right of nav */
+   float: right;
+}
+ul.topnav li a img {
+   margin-right: 5px;
+   margin-left: 5px;
+   padding: 0px 0px;
+   height: 45px;
+}
+
+/* formatting for search fields */
+#searchbox{
+   height: 200px;
+   padding-top: 10px;
+   padding-bottom: 10px;
+   text-align: center;
+}
+#search {
+   width: 50%;
+   font-size: 20px;
+   max-width: 320px;
+}
+#userrating { /* userrating dropdown in trail.php */
+   border: 1px solid #6C8C71;
+   border-radius: 10px;
+   color: #566573;
+   margin: 5px 0px;
+   padding: 5px;
+   width: 50px;
+   position: relative;
+   top: -5px;
+}
+#rating, #range {
+   display: inline-block;
+   margin: 5px 0px;
+   padding: 5px;
+   z-index: 90;
+   position: relative;
+   top: -2px;
+}
+#search, #rating, #range { /* border and formatting for search fields */
+   display: inline-block;
+   border: 2px solid #6C8C71;
+   border-radius: 10px;
+   color: #566573;
+   padding-left: 5px;
+   margin-left: 5px;
+}
+#searchbox img { /* opacity effect for mouse hover */
+   opacity: 1;
+}
+#searchbox img:hover {
+   opacity: 0.7;
+}
+#rangefields {
+   text-align: center;
+   position: relative;
+   left: -63px;
+}
+
+/* formatting for footer section */
+footer {
+   height: 20px;
+   padding: 15px 15px;
+   background-color: #4B9656;
+   text-align: center;
+}
+footer a {
+   color: whitesmoke;
+   text-decoration: none;
+}
+footer a:hover {
+   text-decoration: underline;
+}
+
+/* CSS formatting used in results.php*/
+#results {
+   text-align: center;
+}
+/* this class allow map and table in results to be responsive.
+   When the screen is big enough the two will be side by aside.
+   When the screen is small (less than 500px) they will stack */
+.floating-result {
+    display: inline-block;
+    width: 500px;
+    margin: 10px;
+    vertical-align: top;
+}
+#result-map {
+   border: 2px solid #6C8C71;
+   width: 496px;
+   height: 575px;
+   z-index: 100;
+}
+
+/* Result table formatting */
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+.result-table tr {
+    border: 2px solid #6C8C71;
+    text-align: left;
+    height: 60px;
+}
+.result-table th, .result-table td {
+    padding: 15px;
+}
+.result-table td {
+   vertical-align: top;
+}
+.result-table td a:hover {
+    text-decoration: underline;
+}
+.result-table td:nth-child(odd) { /* reduced width for image columns */
+    width:50px;
+}
+
+/* CSS for trail.php */
+.trail-details h4 {
+      margin: 8px 8px 8px 8px;
+}
+#trail-map {
+   width: 500px;
+   height: 400px;
+   border: 2px solid #6C8C71;
+   max-width: 800px;
+   z-index: 100;
+}
+.user-review h4, .user-review h5 {
+   margin: 0px 0px 0px 0px;
+}
+.video-size {
+   width: 450px;
+   border: 2px solid #6C8C71;
+}
+.map-marker {
+   text-align: center;
+   font-size: 15px;
+}
+#reviewbutton {
+   background-color: #F2F3F4;
+   color: #566573;
+}
+#reviewbutton:hover {
+   background-color: #DADADA;
+}
+
+/* CSS for submission.php and registration.php */
+/* input-group is a group of a label and input field.
+   In combination with input-label and .input-field
+   it ensures labels and input elements line up well
+   with each other. It also ensure when the screen is
+   small the label and input elements stack to fit 
+   the screen size */
+.input-group {
+   display: block;
+   margin-left: 20px;
+   margin-right: 20px;
+   margin-bottom: 10px;
+   text-align: left;
+}
+.input-label {
+   display: inline-block;
+   width: 120px;
+   vertical-align: top;
+}
+.input-field {
+   display: inline-block;
+   font-size: 15px;
+   width: 250px;
+
+}
+.input-group input, .input-group textarea {
+   border: 1px solid #6C8C71;
+   border-radius: 5px;
+   color: #566573;
+   padding-left: 5px;
+}
+.errMsg {
+   color: indianred;
+}
+
+/* input types 'file' and 'submit' are hidden, instead their
+   functionality is accessed using labels attached to them.
+   This is done to apply custom formating to their appearence
+   which is defined in the CSS that follows. */
+input[type="file"] {
+    display: none;
+}
+input[type="submit"] {
+    display: none;
+}
+input[type="button"] {
+    display: none;
+}
+input[type="checkbox"] {
+    width: 20px;
+    margin-left: 125px;
+}
+.button-label {
+   border: 1px solid #6C8C71;
+   display: inline-block;
+   border-radius: 5px;
+   padding: 5px 5px;
+   font-size: 15px;
+   cursor: pointer;
+}
+.button-label:hover {
+   background-color: #DADADA;
+}
+.submit-label {
+   border: 2px solid #6C8C71;
+   display: inline-block;
+   border-radius: 5px;
+   padding: 5px 5px;
+   margin-left: 100px;
+   margin-top: 10px;
+   font-size: 18px;
+   cursor: pointer;
+}
+.submit-label:hover, .search-label:hover {
+   background-color: #DADADA;
+}
+.search-label {
+   border: 2px solid #6C8C71;
+   border-radius: 5px;
+   padding: 5px 5px;
+   margin-top: 10px;
+   font-size: 18px;
+   cursor: pointer;
+}
+
+/* CSS for invalid input of input and textarea elements */
+input:invalid, textarea:invalid {
+   border: 2px solid greenyellow;
+}
+
+/* adjusts results.php images */
+.image-size {
+   max-width: 180px;
+   max-height: 160px;
+}
+
+.centered {
+   text-align: center;
+}
+
+   .image-size2 {
+      max-width: 80%;
+   }
+
+/* CSS configuratin for medium screens less than 650px */
+@media screen and (max-width: 640px) {
+   .image-size2 {
+      max-width: 480px;
+      max-height: 420px;
+   }
+
+   #geoerror {
+      margin-bottom: 50px;
+   }
+}
+
+/* CSS configuratin for smaller screens less than 500px */
+@media screen and (max-width: 500px) {
+
+   /* nav elements made static and stack vertically */
+   nav {
+      position: static;
+      top: 0px;
+      left: 0px;
+      width: 100%;
+   }
+   ul.topnav li.login, ul.topnav li {
+      float: none;
+   }
+   ul.topnav li a.links {
+      padding: 8px 20px;
+   }
+   ul.topnav li a img {
+      height: 20px;
+      margin-top: 5px;
+   }
+
+   /* reduced body margins */
+   body {
+      margin-top: 0px;
+      margin-right: 3px;
+      margin-left: 3px;
+   }
+
+   /* lower resolution header background image */
+   header {
+      background-image: url('../images/headerbg_sm.jpg');
+      margin-top: 0px;
+      padding: 20px 20px 20px 20px;
+   }
+
+   /* Reduced width for search results on smaller screens */
+   .floating-result {
+    width: 280px;
+   }
+
+   /* reduces video width for smalling screens */
+   .video-size {
+      width: 280px;
+   }
+
+   #result-map {
+      width: 276px;
+      max-height: 350px;
+   }
+
+   #trail-map {
+   width: 280px;
+   height: 280px;
+   }
+
+   /* image-size adjusts results.php images and image-size2 adjusts image for trail.php */
+   .image-size {
+      max-width: 90px;
+      max-height: 80px;
+   }
+
+   .image-size2 {
+      max-width: 280px;
+      max-height: 250px;
+   }
+}
